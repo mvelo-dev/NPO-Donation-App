@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color:blue" slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="tittle">Create Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+  <form [formGroup]="Activity">
+
+    <ion-item >
+      <ion-input  placeholder="Activity Name" type="text" [(ngModel)]='act.actName' formControlName="actName"></ion-input>
+  
+      <div>
+      <ng-container  *ngIf="Activity?.get('actName')?.hasError('required') && (Activity?.get('actName')?.touched || Activity?.get('actName')?.dirty )" lines="none" color="danger" >
+        <ion-label   style="color: red; font-size: 13px;" > <ion-icon name="alert-circle"></ion-icon>Required</ion-label>
+      </ng-container>
+     </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  placeholder="Description" type="text" [(ngModel)]='act.actDetails' formControlName="actDetails"></ion-input>
+  
+      <div>
+      <ng-container  *ngIf="Activity?.get('actDetails')?.hasError('required') && (Activity?.get('actDetails')?.touched || Activity?.get('actDetails')?.dirty )" lines="none" color="danger" >
+        <ion-label   style="color: red; font-size: 13px;" > <ion-icon name="alert-circle"></ion-icon>Required</ion-label>
+      </ng-container>
+     </div>
+    </ion-item>
+
+    <ion-item >
+      <ion-input  placeholder="Needed Volunteers" type="text" [(ngModel)]='act.actVol_No' formControlName="actVol_No"></ion-input>
+  
+      <div>
+      <ng-container  *ngIf="Activity?.get('actVol_No')?.hasError('required') && (Activity?.get('actVol_No')?.touched || Activity?.get('actVol_No')?.dirty )" lines="none" color="danger" >
+        <ion-label   style="color: red; font-size: 13px;" > <ion-icon name="alert-circle"></ion-icon>Required</ion-label>
+      </ng-container>
+     </div>
+    </ion-item>
+
+    <ion-item >
+      <ion-input  placeholder="Location" type="text" [(ngModel)]='act.actLoc' formControlName="actLoc"></ion-input>
+  
+      <div>
+      <ng-container  *ngIf="Activity?.get('actLoc')?.hasError('required') && (Activity?.get('actLoc')?.touched || Activity?.get('actLoc')?.dirty )" lines="none" color="danger" >
+        <ion-label   style="color: red; font-size: 13px;" > <ion-icon name="alert-circle"></ion-icon>Required</ion-label>
+      </ng-container>
+     </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime
+        placeholder="Select Date and Time"
+        display-format="MMM DD, YYYY HH:mm"
+        [(ngModel)]="act.actDate"
+        formControlName="actDate"
+      ></ion-datetime>
+    
+      <div>
+        <ng-container *ngIf="Activity?.get('actDate')?.hasError('required') && (Activity?.get('actDate')?.touched || Activity?.get('actDate')?.dirty)" lines="none" color="danger">
+          <ion-label style="color: red; font-size: 13px;">
+            <ion-icon name="alert-circle"></ion-icon>Required
+          </ion-label>
+        </ng-container>
+      </div>
+    </ion-item>
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      
+    <button  class="Donate" (click)="addTask(act)" [disabled]="Activity.invalid ">Submit</button>
+  
+  </form>
+</div>
+</ion-content>

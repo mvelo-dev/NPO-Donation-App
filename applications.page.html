@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color: black;" slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/connections/',id]" >
+        <ion-icon style="color: black;" name="swap-horizontal-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+ 
+    
+    <ion-title class="tittle"> APPLICATIONS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <div class="item"  *ngFor="let a of app"  >
+    <div class="item1">
+
+    </div>
+    <div class="item2" [routerLink]="['/view-vol-profile/',id,a.volId]"> View More</div>
+
+   <div class="item3">
+    
+    <button  (click)="Status(a.actId,a.volId)" (click)="Connection(a.npoId,a.volId,a.actId,a.actName,a.date)" (click)="History(a.npoId,a.volId,a.actId,a.actName,a.date)" ><i style="color: blue; font-size: 30px; background-color:#D9D9D9 ;" class='bx bx-check' ></i></button>
+    <div  >status:{{a.status}}</div>
+    
+   </div>
+
+   <div class="details">
+    <label>Vol email:</label>{{a.volId}}<br>
+    <label>date:{{ a.date | date:'shortDate' }}</label><br>
+    <label>Activity name:{{a.actName}}</label><br>
+   
+    <br>
+    
+   </div>
+    </div>
+
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

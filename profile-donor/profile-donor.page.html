@@ -1,0 +1,99 @@
+<ion-menu content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="tittle">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+   <ion-list>
+    <ion-item button [routerLink]="['/donor-history/',id]">
+      <ion-label style="font-size: 18px;">
+        <ion-icon name="document-text" slot="start" color="blue"></ion-icon>
+        History
+      </ion-label>
+    </ion-item>
+
+    <ion-item button [routerLink]="['/welcome']">
+      <ion-label style="font-size: 18px;">
+        <ion-icon name="log-out" slot="start" color="red"></ion-icon>
+        Log Out
+      </ion-label>
+    </ion-item>
+   </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons  slot="start">
+          <ion-menu-button animation style="color: blue;"></ion-menu-button>
+        </ion-buttons>
+
+      <ion-buttons  slot="end" style="color: blue;">
+        <ion-icon  *ngIf="id!='anonymous'" [routerLink]="['/home-npos-don/',id]" style="font-size: 24px; font-weight: 500;" name="home-outline"></ion-icon>
+      </ion-buttons>
+        <ion-title  class="tittle">DONOR PROFILE</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content >
+
+      <div class="container" *ngIf="isDataFetched && isDataFetched2">
+        <div class="item-added">
+
+          <div class="item item1">
+            <div class="pic" [ngStyle]="{'background-image': 'url(' + photo + ')'}">   
+              <div (click)="getPic(pic)" class="inner">
+              <ion-icon name="camera" class="camera-icon"></ion-icon>
+            </div></div>
+          
+          </div>
+          <div style="font-size: 18px; text-align: center;font-weight: 600; margin-top: 4px;" class="profile-name">{{don.name}} {{don.surname}}</div>
+        </div>
+
+        <div class="item item2"   >
+
+ 
+          <div class="item2inner" >
+    
+            <div style="position: relative;width: 100%; display: flex; justify-content: center;" >
+               <div [routerLink]="['/bio-don/',don.id]"  class="detail-content">{{bioInfo.bio}}<span style="position: absolute;top:20%;"> Bio</span></div>
+          </div>
+          
+       <div class="conThing">
+        <div><span style="font-weight: 600; color: green;">Email</span>:{{don.email}}</div>
+
+          <div><span style="font-weight: 600; color: green;">Tell No</span>:{{don.phoneNo}}</div>
+        
+        </div>
+    
+        </div>
+         <button [routerLink]="['/edit-profile-don/',don.id]" class="edit2"> <ion-icon name="create-outline"></ion-icon></button>
+         <div class="tittle-1"><strong>Details</strong></div>
+        </div>
+        <div [routerLink]="['/donor-history/',id]" class="item item3"  >
+          <div class="item3inner">
+      
+         <div class="activ">
+          
+          <label><strong>Tap to see donation history</strong> </label>
+          
+          </div>
+          </div>
+          
+          <div class="tittle-1"><strong>History</strong></div>
+           </div>
+
+
+      </div>
+
+    </ion-content>
+
+
+
+
+  </div>
+ 

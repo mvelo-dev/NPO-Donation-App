@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color: black;" slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+     
+    </ion-buttons>
+ 
+    
+    <ion-title class="tittle">DONATIONS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+  <div class="item"  *ngFor="let a of app"  >
+    <div class="item1">
+
+    </div>
+    <div class="item2"> Details</div>
+
+   <div class="item3">
+    
+
+   </div>
+
+   <div class="details">
+    <label>Don email:</label>{{a.donId}}<br>
+    <label>date:{{ a.date | date:'shortDate' }}</label><br>
+    <label>Amount:R{{a.amount}}</label><br>
+    <label>For:R{{a.fundingId}}</label><br>
+   
+    <br>
+  
+
+   </div>
+    </div>
+
+ </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color: #007bff;" slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title class="tittle">Admin Dashboard</ion-title>
+    
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="verification-card">
+
+    <ion-card-content>
+      <p class="notification" style="color: black;">N.B.: This applies to accounts that have paid for immediate approval.</p>
+      <p class="instruction" style="color: black;">To verify an NPO account immediately, click the button below.</p>
+      <ion-button expand="full" color="primary" [routerLink]="['/fast-verify']">Fast Verify</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+   
+  <br>
+
+  <ion-card class="verification-card">
+
+    <ion-card-content>
+      <p class="notification" style="color: black;">N.B.: Normal account approval is done here, for all accounts that didn't pay the admin fee.</p>
+      <p class="instruction" style="color: black;">To verify an NPO account, click the button below.</p>
+      <ion-button expand="full" color="secondary"  [routerLink]="['/verify/', 'admin']">Verify NPOs</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color:blue" slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title class="tittle"> ADMIN </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content style="text-align: center;" >
+
+  <ion-card>
+    <ion-card-content>
+      <img src="assets/ad.png" alt="Image">
+    </ion-card-content>
+  </ion-card>
+  <br>
+
+  <ion-item>
+    <ion-icon name="lock-closed"></ion-icon>
+    <ion-input placeholder="Code" type="password" [(ngModel)]='admin.code' ></ion-input>
+
+  </ion-item>
+   <br>
+   <br>
+   <br>
+  <button class="Lbutton" (click)="login()">LOGIN</button>
+ 
+  
+</ion-content>

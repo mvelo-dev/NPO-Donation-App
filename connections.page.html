@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color:black" slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    
+    <ion-title class="tittle"> CONNECTIONS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <div class="item" *ngFor="let a of app" >
+    <div class="item1">
+
+    </div>
+    <div class="item2">Contact Vol</div>
+
+   <div class="item3">
+    
+   
+
+   </div>
+
+   <div class="details">
+    <label>NPOemail:{{a.volId}}</label><br>
+    <label>date:{{ a.date | date:'shortDate' }}</label><br>
+    <label>Activity name:{{a.actName}}</label><br>
+   
+    <br>
+  
+
+   </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
+</ion-content>

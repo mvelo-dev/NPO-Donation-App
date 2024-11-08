@@ -1,0 +1,56 @@
+
+ion-content {
+    --ion-background-color: rgb(234,234,234);
+    --border: 1px solid black;
+  }
+  ion-header {
+    --ion-background-color: black;
+  }
+  ion-toolbar{
+    --ion-toolbar-background: rgb(234,234,234);
+    height: 50px;
+  }
+  
+  
+  .Donate{
+    width: 120px;
+    height: 49px;
+    background-color: skyblue; 
+    border-radius: 16px;
+    border: 1px solid #000000;
+    font-size: 20px;
+    font-weight: 280;
+
+   }
+    .tittle{
+      
+      text-align: center;
+       color:black;
+       font-weight: 400;
+      font-size: 20px;
+       padding-top: 10px;
+  
+    }
+    .custom-input {
+      font-size: 12px;
+    }
+    ion-item{
+      font-size: 17px;
+    }
+  
+  .container{
+  
+    width:100vw;
+    height: 100vh;
+    text-align: center;
+  }
+  p{text-align: center;
+  
+  }
+  .center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+    
