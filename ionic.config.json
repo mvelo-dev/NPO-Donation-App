@@ -1,0 +1,7 @@
+{
+  "name": "connectNPOv1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
